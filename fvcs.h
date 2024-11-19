@@ -2,12 +2,32 @@
 #include <stdlib.h>
 #include <dirent.h>
 
+#define SIZE 1024
+
 typedef struct node {
-	DIR *dir;
-	lists *fl, *bl;
+	char *name;
+	unsigned int id;
+	struct node *next, *prev;
 } node;
-typedef  node* p;
-typedef struct lists {
-	node *forw, *back;
-	lists *next, *prev;
-} lists;
+
+typedef struct hashtable {
+	node *block[SIZE];
+} hashtable;
+
+int count = 0;
+
+void ftp(char *);
+void ssh(char *);
+void save(hashtable *, const char *, int);
+void read(hashtable *, const char *, int);
+void delete_repo(unsigned int);
+void init(hashtable *);
+void delete_node(hashtable *, hashtable *, unsigned int);
+void insert(hashtable *, char *, unsigned int);
+unsigned int hash_fun(char *);
+unsigned int create_repo(char *);
+unsigned int get_id(hashtable *, hashtable *, char *);
+char *get_name(hashtable *, unsigned int);
+node *create_node(char *, unsigned int);
+node *search(hashtable *, char *);
+

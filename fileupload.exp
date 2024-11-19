@@ -1,0 +1,17 @@
+#!/usr/bin/expect -f 
+set timeout -1 
+set current_dir [exec pwd]
+set user "temp"
+set host "ftp://192.168.74.130"
+set server_dir "/home/temp/storage" 
+set password "123456"
+set name [lindex $argv 0]
+append server_dir "/" $name
+spawn lftp -u $user,$password $host
+expect "lftp*"
+send "cd $server_dir\r"
+expect "lftp*"
+send "mirror -R $current_dir $server_dir\r"
+expect "lftp*"
+send "exit\r"
+interact
