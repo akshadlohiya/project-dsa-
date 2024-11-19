@@ -3,8 +3,8 @@
 #include "fvcs.h"
 #include <dirent.h>
 
-int main(char *argv[], int argc) {
-	char *name;
+int main(int argc, char *argv[]) {
+	char name[1024];
 	unsigned int id;
 	int i;
 	if(strcmp(argv[1], "fvcs") != 0) {
@@ -25,7 +25,7 @@ int main(char *argv[], int argc) {
 			}
 			printf("your directory id is %u\n", id);
 		}
-		if(strcmp(argv[3], "delete") == 0) {
+		else if(strcmp(argv[3], "delete") == 0) {
 			printf("Please Enter you id for repo deletion\n");
 			scanf("%u", &id);
 			delete_repo(id);
