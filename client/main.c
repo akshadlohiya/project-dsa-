@@ -13,18 +13,8 @@ int main(int argc, char *argv[]) {
 	}
 	if(strcmp(argv[2] , "repo") == 0) {
 		if(strcmp(argv[3], "create") == 0) {
-			system("./createrepo.exp > output.txt");
-			FILE *fp = fopen("output.txt", "r");
-			char idc[1024];
-			fscanf(fp, "%s", idc);
-			id = atoi(idc);
+			system("./createrepo.exp");
 			printf("If you want to store your ip localy on your press 1 or press any other key for write your id\n");
-			scanf("%d", &i);
-			if(i == 1) { //asking user if he wants to store id no file in his repo
-				FILE *file = fopen("id.txt", "w");
-				fwrite(&id, sizeof(int), 1, file);
-				fclose(file);
-			}
 			printf("your directory id is %u\n", id); //if in both case print the id
 		}
 		else if(strcmp(argv[3], "delete") == 0) {
