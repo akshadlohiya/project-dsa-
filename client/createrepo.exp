@@ -1,0 +1,38 @@
+#!/usr/bin/expect -f 
+set timeout -1
+set user "temp"
+set host "192.168.74.130"
+set server_dir "/home/project-dsa-/server" 
+set password "123456"
+spawn ssh $user@$host
+expect "password"
+send "$password\r"
+expect "kali*"
+send "cd $server_dir\r"
+expect "kali*"
+send "./createrepo"
+expect "kali*"
+send "exit\r"
+send "clear\r"
+interact
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

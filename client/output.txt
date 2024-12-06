@@ -1,0 +1,18 @@
+spawn ssh temp@192.168.74.130
+temp@192.168.74.130's password: 
+Linux kali 6.10.11-amd64 #1 SMP PREEMPT_DYNAMIC Kali 6.10.11-1kali1 (2024-09-26) x86_64
+
+The programs included with the Kali GNU/Linux system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Kali GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent
+permitted by applicable law.
+Last login: Thu Dec  5 23:34:37 2024 from 192.168.74.130
+cd /home/project-dsa-/server
+[?2004h]0;temp@kali: ~[;32m┌──([1;34mtemp㉿kali[;32m)-[[0;1m~[;32m]
+[;32m└─[1;34m$[0m cd /home/project-dsa-/server
+[?2004l-bash: cd: /home/project-dsa-/server: No such file or directory
+
+[?2004h]0;temp@kali: ~[;32m┌──([1;34mtemp㉿kali[;32m)-[[0;1m~[;32m]
+[;32m└─[1;34m$[0m ./createrepo
